@@ -1,45 +1,40 @@
     async function getPhotographers() {
         // Penser à remplacer par les données récupérées dans le json
-        const photographers = [
-            {
-                "name": "Ma data test",
-                "id": 1,
-                "city": "Paris",
-                "country": "France",
-                "tagline": "Ceci est ma data test",
-                "price": 400,
-                "portrait": "account.png"
-            },
-            {
-                "name": "Autre data test",
-                "id": 2,
-                "city": "Londres",
-                "country": "UK",
-                "tagline": "Ceci est ma data test 2",
-                "price": 500,
-                "portrait": "account.png"
-            },
-        ]
+        const url = '../data/photographers.json'
+        return fetch(url)
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data)
+            return data.photographers})
+        
+        .catch((err) => console.log(err));
         // et bien retourner le tableau photographers seulement une fois
-        return ({
-            photographers: [...photographers, ...photographers, ...photographers]})
-    }
+        
+                        
+        }
 
-    async function displayData(photographers) {
-        const photographersSection = document.querySelector(".photographer_section");
+        async function displayData() {
+            const photographersSection = document.querySelector(".photographer_section");
 
-        photographers.forEach((photographer) => {
-            const photographerModel = photographerFactory(photographer);
-            const userCardDOM = photographerModel.getUserCardDOM();
-            photographersSection.appendChild(userCardDOM);
-        });
-    };
+            const photographersData = await getPhotographers();
+            console.log(photographersData)
+            const NewPhotographer = photographersData.map(photographer => new photographers(photographer))
+            console.log(NewPhotographer)
 
-    async function init() {
-        // Récupère les datas des photographes
-        const { photographers } = await getPhotographers();
-        displayData(photographers);
-    };
-    
-    init();
+            NewPhotographer.forEach(photographer => {
+                const Template = new photographerCard(photographer)
+                console.log(photographerCard)
+                photographersSection.appendChild(Template.createPhotographerCard())
+                
+                    
+            })
+        }      
+        async function init() {
+            // Récupère les datas des photographes
+            
+            return displayData();
+        };
+        
+        init();
+
     

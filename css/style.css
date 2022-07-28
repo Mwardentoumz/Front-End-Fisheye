@@ -12,11 +12,13 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    margin-top: 20px;
 }
 
 h1 {
     color: #901C1C;
     margin-right: 100px;
+    font-weight: normal;
 }
 
 .logo {
@@ -29,6 +31,8 @@ h1 {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
     margin-top: 100px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .photographer_section article {
@@ -44,7 +48,14 @@ h1 {
     font-size: 36px;
 }
 
-.photographer_section article img {
+.photographer__cover {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.photographer_section article img{
     height: 200px;
     width: 200px;
 }
