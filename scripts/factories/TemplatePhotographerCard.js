@@ -16,7 +16,7 @@ class photographerCard {
               <h2 class="photographer__title">${this._photographer.name}</h2>        
             </a>
               <div class="photographer__infos" tabindex="0">
-                <div class="photographer__infos__local text--primary">${this._photographer.city}, ${this._photographer.country}</div>
+                <div class="photographer__infos__local">${this._photographer.city}, ${this._photographer.country}</div>
                 <div class="photographer__infos__tagline">${this._photographer.tagline}</div>
                 <div class="photographer__infos__price text--grey">${this._photographer.price}€/jour</div>
               </div>
