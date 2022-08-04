@@ -1,13 +1,15 @@
 class photographers {
     constructor(data){
 
-        this._name = data.name,
-        this._id = data.id,
-        this._city = data.city,
-        this._country = data.country,
-        this._tagline = data.tagline,
-        this._price = data.price,
+        this._profilPath = 'assets/photographers/'
+        this._id = data.id
+        this._name = data.name
+        this._city = data.city
+        this._country = data.country
+        this._tagline = data.tagline
+        this._price = data.price
         this._portrait = data.portrait
+        this._portfolio = []
     }
 
     get name(){

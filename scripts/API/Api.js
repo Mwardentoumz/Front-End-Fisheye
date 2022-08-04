@@ -13,12 +13,24 @@ class Api {
             .then((data) => {
                 console.log(data.photographers)
                 return data.photographers
-                
+
             })
-            
+
             .catch(err => console.log('an error occurs', err))
-        }
     }
+    async getPhotographerById(userId) {
+        return fetch(this._url)
+            .then(response => response.json())
+            .then(response => {
+                return response.photographers.filter(photographer => photographer.id === userId)[0]
+            })
+            .catch(err => {
+                throw new Error('La requete api getPhotographer a échoué : ', err)
+            })
+    }
+
+}
+
 
 
 class PhotographerApi extends Api {
@@ -32,6 +44,6 @@ class PhotographerApi extends Api {
 
     async getPhotographers() {
         return await this.get()
-        
+
     }
 }

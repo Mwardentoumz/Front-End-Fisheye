@@ -1,15 +1,15 @@
 class photographerCard {
-    constructor(photographers) {
-        this._photographer = photographers
-    }
+  constructor(photographers) {
+    this._photographer = photographers
+  }
 
-    createPhotographerCard () {
-        
-        this.$wrapperCard = document.createElement('div')
-    
-        const card = `      
+  createPhotographerCard() {
+
+    this.$wrapperCard = document.createElement('div')
+
+    const card = `      
           <article class="photographer">
-            <a href="photographer.html?id=${this._photographer.id}" aria-label="${this._photographer.name}">
+            <a href="photographerPage.html?id=${this._photographer.id}" aria-label="${this._photographer.name}">
               <div class="photographer__cover">
                 <img src="${this._photographer.portrait}" alt="${this._photographer.name}" />
               </div>        
@@ -22,8 +22,31 @@ class photographerCard {
               </div>
           </article>      
         `
-    
-        this.$wrapperCard.innerHTML = card
-        return this.$wrapperCard
-        };
+
+    this.$wrapperCard.innerHTML = card
+    return this.$wrapperCard
+  };
+
+  createPhotographerHeader() {
+
+    this.$wrapperCard = document.createElement('div')
+
+    const card = `      
+            <article class="photographer">
+              <div class="photographer__infos" tabindex="0">
+                  <h3 class="photographer__title">${this._photographer.name}</h3>        
+                  <div class="photographer__infos__local">${this._photographer.city}, ${this._photographer.country}</div>
+                  <div class="photographer__infos__tagline">${this._photographer.tagline}</div>
+              </div>
+              <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+              <div class="photographer__cover">
+                <img src="assets/photographers/${this._photographer.portrait}" alt="${this._photographer.name}" />
+              </div>
+            </article>      
+          `
+
+    this.$wrapperCard.innerHTML = card
+    return this.$wrapperCard
+  };
+
 }
