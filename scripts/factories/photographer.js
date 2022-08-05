@@ -40,16 +40,3 @@ class photographers {
         return `../assets/photographers/${this._portrait}`
     }
   }
-
-
-
-
-
-
-// function photographerFactory(data) {
-//     const { name, portrait } = data;
-
-//     const picture = `assets/photographers/${portrait}`;
-
-
-    
