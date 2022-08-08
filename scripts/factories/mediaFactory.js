@@ -4,6 +4,7 @@ class mediaFactory{
     if (data.hasOwnProperty('image')){
         return new mediasImg(data)
         
+        
         }else{
             return new mediasVideo(data)
         }

@@ -1,3 +1,6 @@
+body{
+    min-width: 95%;
+}
 #contact_modal {
     display: none;
 }
@@ -9,11 +12,13 @@
 
 .photographer_header {
     background-color: #FAFAFA;
-    height: 300px;
+    height: auto;
     margin: 0 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 25px;
+    min-width: none;
 }
 
 .photographer{
@@ -67,18 +72,29 @@
 }
 
 .media__cover{
-    height: 250px;
-    width: 250px;
+    height: 600px;
+    width: 700px;
     overflow: hidden;
+    border-radius: 1%;
 }
 
 .medias_section{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 100px;
+    grid-row-gap: 50px;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 .medias_section article img{
-    height: 250px;
-    width: 250px;
+    height: 600px;
+    width: 700px;
+    object-fit: cover;
+}
+
+.medias_section article video{
+    height: 600px;
+    width: 700px;
     object-fit: cover;
 }
 

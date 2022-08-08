@@ -1,6 +1,6 @@
 class AppPhotographer {
     constructor() {
-        this.photographerApi = new PhotographerApi('/data/photographers.json')
+        this.photographerApi = new PhotographerApi('../data/photographers.json')
 
     }
     async displayPhotographer() {
@@ -35,7 +35,7 @@ class AppPhotographer {
         
         
         const NewMedias = mediasData.map(media => new mediaFactory(media))
-        console.log(NewMedias)
+        
 
         // const NewPhotographer = photographersData.map(photographer => new photographers(photographer))
         //     console.log(NewPhotographer)
@@ -48,10 +48,11 @@ class AppPhotographer {
 
         NewMedias.forEach(medias => {
             const Template = new mediaCard(medias)
-            console.log(mediaCard)
-            mediasSection.appendChild(Template.createMediaCard())
             
-        });
+            console.log(Template)
+            
+           mediasSection.appendChild(Template.createCard())
+        })
 
     }
 }
