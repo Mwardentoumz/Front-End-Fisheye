@@ -1,6 +1,6 @@
 class App {
     constructor() {
-        this.photographerApi = new PhotographerApi('/data/photographers.json')
+        this.photographerApi = new PhotographerApi('../data/photographers.json')
         
     }
         async displayData() {

@@ -67,10 +67,19 @@
 }
 
 .media__cover{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
+    height: 250px;
+    width: 250px;
     overflow: hidden;
+}
+
+.medias_section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.medias_section article img{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
 }
 
 .contact_button {

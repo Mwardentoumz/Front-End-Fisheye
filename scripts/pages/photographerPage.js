@@ -34,7 +34,7 @@ class AppPhotographer {
         const mediasData = await this.photographerApi.getMediasById(photographerId)
         
         
-        const NewMedias = mediasData.map(media => new medias(media))
+        const NewMedias = mediasData.map(media => new mediaFactory(media))
         console.log(NewMedias)
 
         // const NewPhotographer = photographersData.map(photographer => new photographers(photographer))

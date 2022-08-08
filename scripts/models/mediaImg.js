@@ -1,4 +1,4 @@
-class medias {
+class mediasImg {
     constructor(data){
 
         this._id = data.id
@@ -23,7 +23,7 @@ class medias {
     }
 
     get image(){
-        return `../assets/medias/${this._image}`
+        return `../Public/assets/medias/${this._image}`
     }
 
     get likes(){
