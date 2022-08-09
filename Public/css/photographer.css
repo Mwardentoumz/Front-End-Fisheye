@@ -1,12 +1,15 @@
 body{
-    min-width: 95%;
+    min-width: 2560px;
 }
 #contact_modal {
     display: none;
 }
 
+header{
+    margin-top: 75px;
+}
 .logo {
-    height: 50px;
+    height: 100px;
     margin-left: 100px;
 }
 
@@ -16,7 +19,6 @@ body{
     margin: 0 100px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 25px;
     min-width: none;
 }
@@ -39,7 +41,6 @@ body{
 .photographer__infos{
     display: flex;
     flex-direction: column;
-    align-items: center;
     line-height: 1.6;
     margin-right: 150px;
 
@@ -47,25 +48,24 @@ body{
 
 .photographer_header article h3 {
     color: #D3573C;
-    font-size: 130px;
+    font-size: 115px;
     margin-top: 110px; 
     margin-bottom: 10px ;
 }
 
 .photographer__infos__local{
     color: #901C1C;
-    text-align: center;
-    font-size:80px;
+    font-size:70px;
 }
 .photographer__infos__tagline{
     font-size: smaller;
     color: lightslategray;
-    font-size: 80px;
+    font-size: 50px;
 }
 
 .photographer__cover {
-    height: 250px;
-    width: 250px;
+    height: 400px;
+    width: 400px;
     border-radius: 50%;
     overflow: hidden;
     margin-left: auto;
@@ -73,8 +73,8 @@ body{
 }
 
 .photographer_header article img{
-    height: 250px;
-    width: 250px;
+    height: 400px;
+    width: 400px;
     object-fit: cover;
     
 }
@@ -107,17 +107,29 @@ body{
 }
 
 .contact_button {
-    font-size: 20px;
+    font-size: 29px;
     font-weight: bold;
     color: white;
     padding: 11px;
-    width: 170px;
-    height: 70px;
+    width: 250px;
+    height: 100px;
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 150px;
+    margin-right: 500px;
+    margin-left:145px;
+}
+
+.title_likes{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.likes_heart{
+    align-items: flex-end;
 }
 
 .modal {

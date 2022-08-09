@@ -12,7 +12,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 h1 {
@@ -22,7 +22,7 @@ h1 {
 }
 
 .logo {
-    height: 50px;
+    height: 70px;
     margin-left: 100px;
 }
 
@@ -63,6 +63,7 @@ a:-webkit-any-link{
     flex-direction: column;
     align-items: center;
     line-height: 1.4;
+    margin-right: 0px;
 }
 
 .photographer__infos__tagline{
@@ -94,5 +95,6 @@ a:-webkit-any-link{
 .photographer__infos__local{
     color: #D3573C;
     text-align: center;
+    font-size: 15px;
 }
 

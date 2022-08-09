@@ -17,8 +17,10 @@ class mediaCard {
                     </a>
                     <div class="title_likes">
                         <h3 class="media_title">${this._media.title}</h3>
-                        <span class="likes">likes</span>
-                        <span class="heart_symbol">symbol here</span>
+                        <div class="likes_heart">
+                            <span class="likes">likes</span>
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
                     </div>
                 </article>
             `
@@ -41,8 +43,10 @@ class mediaCard {
                     </a>
                     <div class="title_likes">
                         <h3 class="media_title">${this._media.title}</h3>
-                        <span class="likes">likes</span>
-                        <span class="heart_symbol">symbol here</span>
+                        <div class="likes_heart">
+                            <span class="likes">likes</span>
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
                     </div>
                 </article>
             `
