@@ -1,5 +1,7 @@
 class AppPhotographer {
-    constructor() {
+    constructor(media) {
+        //initialisation de l'API
+        this._media = media
         this.photographerApi = new PhotographerApi('../data/photographers.json')
 
     }
@@ -7,58 +9,57 @@ class AppPhotographer {
 
         //accès à l'élement du DOM
         const photographersSection = document.querySelector(".photographer_header");
+        const mediasSection = document.querySelector(".medias_section")
+        const portfolio = []
 
-        //récupération de l'ID
+        //récupération des paramètres URL
         const queryString = window.location.search
         const urlParams = new URLSearchParams(queryString)
-        const userId = parseInt(urlParams.get('id'))
+        const photographerId = parseInt(urlParams.get('id'))
 
-        const photographersData = await this.photographerApi.getPhotographerById(userId);
+        //récupérer les medias et le photographe
+
+        const photographersData = await this.photographerApi.getPhotographerById(photographerId);
+        const mediasData = await this.photographerApi.getMediasById(photographerId)
         const NewPhotographer = new photographers(photographersData)
         
+        // générer le header
 
         const Template = new photographerCard(photographersData)
         photographersSection.appendChild(Template.createPhotographerHeader())
-    };
-
-    async displayMedias() {
-
-        //accès à l'élement du DOM
-        const mediasSection = document.querySelector(".medias_section");
-
-        //récupération de l'IDs
-        const queryString = window.location.search
-        const  urlParams = new URLSearchParams(queryString)
-        const photographerId = parseInt(urlParams.get('id'))
-
-        const mediasData = await this.photographerApi.getMediasById(photographerId)
-        
-        
-        const NewMedias = mediasData.map(media => new mediaFactory(media))
-        
-
-        // const NewPhotographer = photographersData.map(photographer => new photographers(photographer))
-        //     console.log(NewPhotographer)
-
-        //     NewPhotographer.forEach(photographer => {
-        //         const Template = new photographerCard(photographer)
-        //         console.log(photographerCard)
-        //         photographersSection.appendChild(Template.createPhotographerCard())
-                
-
+  
+        //générer le portfolio 
+        const NewMedias = mediasData.map(media => new mediaFactory(media))  
         NewMedias.forEach(medias => {
             const Template = new mediaCard(medias)
-            
             console.log(Template)
-            
-           mediasSection.appendChild(Template.createCard())
+            portfolio.push(Template)
+            mediasSection.appendChild(Template.createCard())
         })
 
-    }
-}
-
-
+        console.log(portfolio)
+        
+        // portfolio.forEach(media => {
+            const main = document.querySelector("main")
+            const links = Array.from(main.getElementsByTagName("a"))
+            console.log(links)
+            links.forEach(link => {
+              link.addEventListener('click', e => {
+                e.preventDefault()
+                const timer = setTimeout(() => {
+                  clearTimeout(timer)
+                }, 500)
+                const lightbox = new Lightbox(mediasData, photographersData)
+                console.log(lightbox
+                  )
+                lightbox.init()
+              })
+            })
+      //     })
+      //   }
+      // }
+    }}
 
 const App2 = new AppPhotographer()
 App2.displayPhotographer()
-App2.displayMedias()
+

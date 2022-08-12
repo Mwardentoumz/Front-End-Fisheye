@@ -18,8 +18,8 @@ class mediaCard {
                     <div class="title_likes">
                         <h3 class="media_title">${this._media.title}</h3>
                         <div class="likes_heart">
-                            <span class="likes">likes</span>
-                            <i class="fa-solid fa-heart"></i>
+                            <span class="likes">${this._media.likes}</i></span>
+                            <img class="likes_heart" src="./assets/icons/heart-solid.svg" alt="coeur"></img>
                         </div>
                     </div>
                 </article>
@@ -44,8 +44,9 @@ class mediaCard {
                     <div class="title_likes">
                         <h3 class="media_title">${this._media.title}</h3>
                         <div class="likes_heart">
-                            <span class="likes">likes</span>
-                            <i class="fa-solid fa-heart"></i>
+                            <span class="likes">${this._media.likes}</span>
+                            <img class="likes_heart_img" src="./assets/icons/heart-solid.svg" alt="coeur"></img>
+                            
                         </div>
                     </div>
                 </article>

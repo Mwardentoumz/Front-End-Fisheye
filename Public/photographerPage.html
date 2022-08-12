@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <script src="<script src="https://kit.fontawesome.com/645927df1f.js" crossorigin="anonymous"></script>
+    
     <title>Fisheye - photographe </title>
   </head>
   <body>
@@ -33,14 +33,24 @@
 				</form>
 			</div>
 		</div>
+    <div class="lightbox">
+      <button class="previous"></button>
+      <div class="lightbox-img"></div>
+      <button class="next"></button>
+      <button class="lightbox-close"></button>
+    </div>
     <script src="/scripts/API/Api.js"></script>
+    
     <script src="/scripts/models/photographer.js"></script>
     <script src="/scripts/factories/TemplatePhotographerCard.js"></script>
+    
     <script src="/scripts/factories/mediaCard.js"></script>
     <script src="/scripts/models/mediaImg.js"></script>
     <script src="/scripts/models/mediaVideo.js"></script>
     <script src="/scripts/pages/photographerPage.js"></script>
-    <script src="/scripts/factories/mediaFactory.js"></script>    
+    <script src="/scripts/factories/mediaFactory.js"></script> 
+    <script src="/scripts/models/lightboxTemplate.js"></script>   
+    <script src="/scripts/utils/lightbox.js"></script>    
     <script src="/scripts/utils/contactForm.js"></script>
     
   </body>

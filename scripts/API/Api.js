@@ -34,7 +34,6 @@ class Api {
         return fetch(this._url)
             .then(response => response.json())
             .then(response => {
-                console.log(response.media.filter(element => element.photographerId === photographerId ))
                 return response.media.filter(element => element.photographerId === photographerId )
                 
             })
@@ -43,6 +42,21 @@ class Api {
             })
     }
 
+  /**
+   * requete API simulation get tous les media avec l'id du photographe
+   * @returns {Promise}
+   */
+  async getAllMedias () {
+    return fetch(this._url)
+      .then(response => response.json())
+      .then(response => {
+        console.log(response.media)
+        return response.media
+      })
+      .catch(err => {
+        throw new Error('La requete api getPhotographer a échoué : ', err)
+      })
+  }
 }
 
 

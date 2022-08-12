@@ -5,6 +5,7 @@ body{
     display: none;
 }
 
+
 header{
     margin-top: 75px;
 }
@@ -126,11 +127,25 @@ header{
     flex-direction: row;
     align-content: center;
     align-items: center;
+    justify-content: space-between;
 }
 
+.likes{
+    font-size: 25px;
+    margin-right:15px;
+}
 .likes_heart{
     align-items: flex-end;
+    
 }
+
+.likes_heart :nth-child(1n){
+    height: 30px;
+    width:30px;
+    color: #901C1C;
+    margin-bottom: -6px;
+}
+
 
 .modal {
     border-radius: 5px;
