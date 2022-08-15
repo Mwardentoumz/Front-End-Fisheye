@@ -55,12 +55,20 @@ class LightboxTemplate {
     template.classList.add('lightbox')
 
     const content = `
-        <button class="lightbox__close material-icons" aria-label="Fermer la boite de dialog">close</button>
-        <button class="lightbox__next material-icons" aria-label="Media suivant">arrow_forward_ios</button>
-        <button class="lightbox__prev material-icons" aria-label="Media précédent">arrow_back_ios</button>
+        
+        
+        <button class="lightbox__prev round" aria-label="Media précédent"><span class="material-symbols-outlined">
+        chevron_left
+        </span></button>
         <div class="lightbox__container">
           <div class="lightbox__container__content"></div>             
         </div>
+        <button class="lightbox__next round" aria-label="Media suivant"><span class="material-symbols-outlined">
+        chevron_right
+        </span></button>
+        <button class="lightbox__close" aria-label="Fermer la boite de dialog"><span class="material-symbols-outlined">
+        close
+        </span></button>
       `
 
     template.innerHTML = content
@@ -71,6 +79,7 @@ class LightboxTemplate {
     this.$lightboxPrevButton = template.querySelector('.lightbox__prev')
 
     this.$wrapperLightbox = template
+    template.style.display = 'flex'
     return template
   }
 
@@ -81,9 +90,9 @@ class LightboxTemplate {
   loadFactory (media) {
     this._media = media
     // Definition du template de la lightbox
-    if (this._media instanceof mediasImg) {
+    if (this._media instanceof ImageFactory) {
       this._loadImage()
-    } else if (this._media instanceof mediasVideo) {
+    } else if (this._media instanceof VideoFactory) {
       this._loadVideo()
     } 
   }
@@ -93,8 +102,8 @@ class LightboxTemplate {
    */
   _loadImage () {
     const image = new Image()
-    image.src = this._media.path
-    image.alt = this._media.description
+    image.src = this._media.image
+    image.alt = this._media.title
     image.setAttribute('aria-labelledby', 'picture-title')
     image.setAttribute('tabindex', '0')
 

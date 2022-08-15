@@ -56,9 +56,9 @@ class mediaCard {
     };
 
     createCard(){
-        if(this._media instanceof mediasImg){
+        if(this._media instanceof ImageFactory){
             return (this.createImgCard())
-        }else if(this._media instanceof mediasVideo){
+        }else if(this._media instanceof VideoFactory){
             return (this.createVideoCard())
         }}
 }

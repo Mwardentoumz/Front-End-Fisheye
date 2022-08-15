@@ -13,8 +13,10 @@ ROOT :
 
 
 
-Ajoutez deux class imgFactory & videoFactory : rediriger vers la création d'une card spécifique en fonction du type de media
+Ajoutez deux class imgFactory & videoFactory : rediriger vers la création d'une card spécifique en fonction du type de media - 
 
 Création lightbox statique dans le fichier photographer page
     puis ajouter l'event click pour naviguer entre les images
     puis ajouter l'event clavier pour naviguer entre les images
+    gérer la navigation entre les images à l'aide des flèches
+    implementation des event listener

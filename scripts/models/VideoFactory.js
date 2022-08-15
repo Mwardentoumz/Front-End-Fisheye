@@ -1,6 +1,7 @@
-class mediasVideo {
+class VideoFactory {
     constructor(data){
 
+        this._media = data
         this._id = data.id
         this._photographerId = data.photographerId
         this._title = data.title
@@ -8,6 +9,8 @@ class mediasVideo {
         this._likes = data.likes
         this._date = data.date
         this._price = data.price
+        this.$wrapperCard = null
+        
     }
 
     get photographerId(){
@@ -37,4 +40,4 @@ class mediasVideo {
     get price(){
         return this._price
     }
-  }
+}

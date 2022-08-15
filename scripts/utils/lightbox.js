@@ -5,21 +5,27 @@ class Lightbox {
           this._template = new LightboxTemplate(this._media)
           this._controls = undefined
           this._previousFocus = null
+          this._image = media.image
+
       
           // Garde les fonctions dans le context de l'objet
           this._onKeyUp = this._onKeyUp.bind(this)
           this._close = this._close.bind(this)
           this._next = this._next.bind(this)
           this._prev = this._prev.bind(this)
+          
         }
 
-    
+        get image(){
+          return `../Public/assets/medias/${this._image}`
+      }
+
+
       
         /**
          * Init LigthBox
          */
         init () {
-          console.log(this)
           // memorisation de l'element focus precedent
           this._previousFocus = document.querySelector(':focus-visible')
       
@@ -39,7 +45,8 @@ class Lightbox {
           */
         _next (e) {
           e.preventDefault()
-          let i = this._photographer.portfolio.findIndex(media => media.id === this._media.id)
+          console.log(mediaCard)
+          let i = this._portfolio.findIndex(media => media.id === this._media.id)
       
           if (i === this._photographer.portfolio.length - 1) {
             i = -1

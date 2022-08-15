@@ -2,11 +2,11 @@ class mediaFactory{
     constructor(data){
      
     if (data.hasOwnProperty('image')){
-        return new mediasImg(data)
+        return new ImageFactory(data)
         
         
         }else{
-            return new mediasVideo(data)
+            return new VideoFactory(data)
         }
     }
 }
