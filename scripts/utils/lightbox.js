@@ -1,13 +1,14 @@
 class Lightbox {
-      constructor (media, photographer) {
+      constructor (media, photographer, portfolio) {
           this._media = media
           this._photographer = photographer
           this._template = new LightboxTemplate(this._media)
           this._controls = undefined
           this._previousFocus = null
           this._image = media.image
-
-      
+          this._portfolio = portfolio
+          
+          
           // Garde les fonctions dans le context de l'objet
           this._onKeyUp = this._onKeyUp.bind(this)
           this._close = this._close.bind(this)
@@ -19,8 +20,7 @@ class Lightbox {
         get image(){
           return `../Public/assets/medias/${this._image}`
       }
-
-
+      
       
         /**
          * Init LigthBox
@@ -37,6 +37,7 @@ class Lightbox {
           this._template.closeButton.addEventListener('click', this._close)
           this._template.loadFactory(this._media)
           this._initControls()
+          console.log(this._portfolio)
         }
       
         /**
@@ -45,14 +46,14 @@ class Lightbox {
           */
         _next (e) {
           e.preventDefault()
-          console.log(mediaCard)
+          console.log(this._portfolio.findIndex(media => media.id))
           let i = this._portfolio.findIndex(media => media.id === this._media.id)
       
-          if (i === this._photographer.portfolio.length - 1) {
+          if (i === this._portfolio.length - 1) {
             i = -1
           }
       
-          this._media = this._photographer.portfolio[i + 1]
+          this._media = this._portfolio[i + 1]
           this._template.loadFactory(this._media)
           this._initControls()
         }
@@ -63,13 +64,13 @@ class Lightbox {
         */
         _prev (e) {
           e.preventDefault()
-          let i = this._photographer.portfolio.findIndex(media => media.id === this._media.id)
+          let i = this._portfolio.findIndex(media => media.id === this._media.id)
       
           if (i === 0) {
-            i = this._photographer.portfolio.length
+            i = this._portfolio.length
           }
       
-          this._media = this._photographer.portfolio[i - 1]
+          this._media = this._portfolio[i - 1]
           this._template.loadFactory(this._media)
           this._initControls()
         }

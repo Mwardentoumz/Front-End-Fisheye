@@ -7,6 +7,11 @@ class AppPhotographer {
     this._portfolio = []
 
   }
+
+    get portfolio(){
+      return this._portfolio
+    }
+
   async displayPhotographer() {
 
     //accès à l'élement du DOM
@@ -50,7 +55,7 @@ class AppPhotographer {
         const timer = setTimeout(() => {
           clearTimeout(timer)
         }, 500)
-        const lightbox = new Lightbox(mediaCard._media, mediaCard._media._photographerId)
+        const lightbox = new Lightbox(mediaCard._media, mediaCard._media._photographerId, this._portfolio)
         console.log(lightbox)
         lightbox.init()
 
