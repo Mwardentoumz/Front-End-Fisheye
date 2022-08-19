@@ -132,7 +132,7 @@ class LightboxTemplate {
    */
   _loadVideo () {
     const video = document.createElement('video')
-    video.src = this._media.path
+    video.src = this._media.video
     video.setAttribute('title', this._media.description)
     video.setAttribute('tabindex', '0')
     video.autoplay = true

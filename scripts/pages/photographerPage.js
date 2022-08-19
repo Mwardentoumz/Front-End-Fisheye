@@ -12,7 +12,7 @@ class AppPhotographer {
       return this._portfolio
     }
 
-  async displayPhotographer() {
+    async displayPhotographer() {
 
     //accès à l'élement du DOM
     const photographersSection = document.querySelector(".photographer_header");
@@ -62,6 +62,7 @@ class AppPhotographer {
       })
       
     })
+    // const lightbox = new Lightbox(mediaCard._media, mediaCard._media._photographerId, this._portfolio)
   }
   //     })
   //   }
@@ -71,4 +72,3 @@ class AppPhotographer {
 
 const App2 = new AppPhotographer()
 App2.displayPhotographer()
-

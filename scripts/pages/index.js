@@ -7,9 +7,9 @@ class App {
             const photographersSection = document.querySelector(".photographer_section");
 
             const photographersData = await this.photographerApi.getPhotographers();
-            console.log(photographersData)
+            
             const NewPhotographer = photographersData.map(photographer => new photographers(photographer))
-            console.log(NewPhotographer)
+            
 
             NewPhotographer.forEach(photographer => {
                 const Template = new photographerCard(photographer)

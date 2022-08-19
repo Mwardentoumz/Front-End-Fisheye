@@ -10,7 +10,7 @@ class ImageFactory {
         this._date = data.date
         this._price = data.price
         this.$wrapperCard = null
-       
+               
     }
 
     get photographerId(){
