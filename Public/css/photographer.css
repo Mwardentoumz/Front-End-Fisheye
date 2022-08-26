@@ -144,6 +144,8 @@ header{
     width:30px;
     color: #901C1C;
     margin-bottom: -6px;
+    background: none;
+    border:none;
 }
 
 
@@ -199,4 +201,11 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+.total-likes{
+    display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
 }

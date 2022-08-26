@@ -11,6 +11,7 @@ class VideoFactory {
         this._price = data.price
         this.$wrapperCard = null
         
+        
     }
 
     get photographerId(){

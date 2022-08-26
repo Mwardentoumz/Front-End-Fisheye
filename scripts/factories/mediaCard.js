@@ -2,9 +2,13 @@ class mediaCard {
     constructor(media) {
         this._media = media
         this.$wrapperCard = null
+        this._likes = media.likes
         
     }
 
+    get likes(){
+        return this._likes
+    }
 
     createImgCard(){
         this.$wrapperCard = document.createElement('div')
@@ -21,7 +25,7 @@ class mediaCard {
                     <div class="title_likes">
                         <h3 class="media_title">${this._media.title}</h3>
                         <div class="likes_heart">
-                            <span class="likes">${this._media.likes}</i></span>
+                            <button class="likes">${this._media.likes}</button>
                             <img class="likes_heart" src="./assets/icons/heart-solid.svg" alt="coeur"></img>
                         </div>
                     </div>
@@ -47,13 +51,16 @@ class mediaCard {
                     <div class="title_likes">
                         <h3 class="media_title">${this._media.title}</h3>
                         <div class="likes_heart">
-                            <span class="likes">${this._media.likes}</span>
+                            <button class="likes">${this._media.likes}</button>
                             <img class="likes_heart_img" src="./assets/icons/heart-solid.svg" alt="coeur"></img>
                             
                         </div>
                     </div>
                 </article>
             `
+
+
+        
         this.$wrapperCard.innerHTML = card
         return this.$wrapperCard    
     };
@@ -64,4 +71,5 @@ class mediaCard {
         }else if(this._media instanceof VideoFactory){
             return (this.createVideoCard())
         }}
+    
 }

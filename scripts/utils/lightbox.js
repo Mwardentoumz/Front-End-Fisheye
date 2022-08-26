@@ -148,7 +148,7 @@ class Lightbox {
         this._template.media,
         this._template.title,
         this._template.nextButton,
-        this._template.prevButton,
+        this._template.prevButton,  
         this._template.closeButton
       ]
       // reinitialise le focus au changement de media
