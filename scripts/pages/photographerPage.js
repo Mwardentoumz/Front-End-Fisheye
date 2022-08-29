@@ -1,5 +1,5 @@
 class AppPhotographer {
-  
+
   constructor(media, photographer) {
     //initialisation de l'API
     this._media = media
@@ -7,9 +7,9 @@ class AppPhotographer {
     this.photographerApi = new PhotographerApi('../data/photographers.json')
     this._portfolio = []
     this._id = parseInt(new URLSearchParams(window.location.search).get('id'))
-    
+    this._button = null
   }
-  
+
 
   get portfolio() {
     return this._portfolio
@@ -57,10 +57,6 @@ class AppPhotographer {
     })
 
 
-
-    console.log(this._portfolio)
-
-
     this._portfolio.forEach(mediaCard => {
       const img = mediaCard.$wrapperCard.querySelector('a')
 
@@ -74,59 +70,77 @@ class AppPhotographer {
         lightbox.init()
 
       })
-
     })
 
-  }
-  async getAllLikes(){
+    const buttonCollection = document.getElementsByClassName('likes')
+    const ArrayFromButtonCollection = Array.from(buttonCollection)
+    let total = 0
     
-      const datas = await this.photographerApi.getMediasById(this._id)
-      console.log(datas)
-      let totalLikes = 0
-      datas.forEach(data => {
-        totalLikes = totalLikes + data.likes
-      })
-      console.log(totalLikes)
+    for (let item of buttonCollection) {
+      parseInt(item.innerHTML)
+      item.addEventListener('click', e => {
+      if (item.hasAttribute('id')) {
+        item.innerHTML = parseInt(item.innerHTML) - 1
+        item.removeAttribute('id')
+      } else {
+        item.innerHTML = parseInt(item.innerHTML) + 1
+        item.setAttribute('id', 'liked')
+        
+      }
+      total = parseInt(item.innerHTML)
+      
+    
+    })
     }
-
-    // this._portfolio.forEach(mediaCard => {
-    //   let i = this._portfolio.findIndex((media => media.likes == mediaCard._likes))
-    //   console.log(i)
-
-    //   const likes = media => media.likes
-    //   console.log(likes)
-    //   likes.addEventListener('click', e => {
-    //     let boolikes = false
-    //     if (boolikes) {
-    //       this._likes--
-    //     } else {
-    //       this._likes++
-    //     }
-    //   })
-    // })
-
-
-
+    for (let item of buttonCollection){
+      total += parseInt(item.innerHTML)
+      item.addEventListener('click', e => {
+        if (item.hasAttribute('id')) {
+          total --
+          item.removeAttribute('id')
+        } else {
+          total ++
+          item.setAttribute('id', 'liked')
+      
+      }
+      console.log(total)
+    })
+    }
+    console.log(total)
+    console.log(buttonCollection)
+    console.log(ArrayFromButtonCollection)
 
 
+
+  }
+  // async getAllLikes() {
+
+  //   const datas = await this.photographerApi.getMediasById(this._id)
+  //   console.log(datas)
+  //   let totalLikes = 0
+  //   datas.forEach(data => {
+  //     totalLikes = totalLikes + data.likes
+  //   })
+  //   console.log(totalLikes)
+  // }
 }
 
 
 const App2 = new AppPhotographer()
 App2.displayPhotographer()
-App2.getAllLikes()
+// App2.getAllLikes()
 
-document.body.addEventListener('click', (event) => {
-  const button = event.target.closest('.likes');
+// document.body.addEventListener('click', (event) => {
+//   const button = event.target.closest('.likes');
 
-  if (button.hasAttribute('id')) {
-    button.innerHTML = parseInt(button.innerHTML) - 1
-    button.removeAttribute('id')
-  } else {
-    button.innerHTML = parseInt(button.innerHTML) + 1
-    button.setAttribute('id', 'liked')
-  }
-})
+//   if (button.hasAttribute('id')) {
+//     button.innerHTML = parseInt(button.innerHTML) - 1
+//     button.removeAttribute('id')
+//   } else {
+//     button.innerHTML = parseInt(button.innerHTML) + 1
+//     button.setAttribute('id', 'liked')
+//   }
+// })
 
 
 
