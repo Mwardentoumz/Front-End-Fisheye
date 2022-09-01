@@ -75,59 +75,61 @@ class AppPhotographer {
     const buttonCollection = document.getElementsByClassName('likes')
     const ArrayFromButtonCollection = Array.from(buttonCollection)
     let total = 0
-    
+
     for (let item of buttonCollection) {
       parseInt(item.innerHTML)
-      item.addEventListener('click', e => {
-      if (item.hasAttribute('id')) {
-        item.innerHTML = parseInt(item.innerHTML) - 1
-        item.removeAttribute('id')
-      } else {
-        item.innerHTML = parseInt(item.innerHTML) + 1
-        item.setAttribute('id', 'liked')
-        
-      }
-      total = parseInt(item.innerHTML)
-      
-    
-    })
-    }
-    for (let item of buttonCollection){
       total += parseInt(item.innerHTML)
       item.addEventListener('click', e => {
         if (item.hasAttribute('id')) {
-          total --
+          
+          item.innerHTML = parseInt(item.innerHTML) - 1
           item.removeAttribute('id')
         } else {
-          total ++
+          
+          item.innerHTML = parseInt(item.innerHTML) + 1
           item.setAttribute('id', 'liked')
-      
-      }
-      console.log(total)
-    })
+
+        }})
     }
-    console.log(total)
-    console.log(buttonCollection)
-    console.log(ArrayFromButtonCollection)
+    const display = document.createElement("div")
 
 
+    display.classList.add('total_likes')
+    console.log(mediasSection)
+    mediasSection.appendChild(display)
+    console.log(photographersData.price)
+    const likes = display.innerHTML = total + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=coeur></img>" + "<span class=likes_price>"+ photographersData.price + "€" + "</span>"
+    console.log(likes)
+    display.style.display = "flex"
 
-  }
-  // async getAllLikes() {
+    for (let item of buttonCollection) {
+      item.addEventListener('click', e => {
+        if (item.hasAttribute('id')) {
+          display.innerHTML = total-- + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=coeur></img>" + "<span class=likes_price>"+ photographersData.price + "€" + "</span>"
+          
+        } else {
+          display.innerHTML = total++ + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=coeur></img>" + "<span class=likes_price>"+ photographersData.price + "€" + "</span>"
 
-  //   const datas = await this.photographerApi.getMediasById(this._id)
-  //   console.log(datas)
-  //   let totalLikes = 0
-  //   datas.forEach(data => {
-  //     totalLikes = totalLikes + data.likes
-  //   })
-  //   console.log(totalLikes)
-  // }
+        }})
+      }
+  
 }
+}
+    // async getAllLikes() {
+
+    //   const datas = await this.photographerApi.getMediasById(this._id)
+    //   console.log(datas)
+    //   let totalLikes = 0
+    //   datas.forEach(data => {
+    //     totalLikes = totalLikes + data.likes
+    //   })
+    //   console.log(totalLikes)
+    // }
 
 
-const App2 = new AppPhotographer()
-App2.displayPhotographer()
+
+    const App2 = new AppPhotographer()
+    App2.displayPhotographer()
 // App2.getAllLikes()
 
 // document.body.addEventListener('click', (event) => {

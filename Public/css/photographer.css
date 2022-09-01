@@ -148,8 +148,18 @@ header{
     border:none;
 }
 
+.contact_modal{
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+}
 
 .modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
     border-radius: 5px;
     background-color: #DB8876;
     width: 50%;
@@ -203,9 +213,26 @@ form input {
     border-radius: 5px;
 }
 
-.total-likes{
-    display: flex;
-      position: fixed;
-      top: 0;
-      left: 0;
+.total_likes{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    height: 130px;
+    position: fixed;
+    bottom: 0%;
+    width: 500px;
+    right: 3%;
+    color: #312e2e;
+    font-size: 80px;
+    background-color: #db8876;
+    opacity: 1;
+    font-weight: bold;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px
+    }
+
+.total_likes img{
+    height: 80px;
+    width: 80px;
+    margin-left: -50px;
 }
