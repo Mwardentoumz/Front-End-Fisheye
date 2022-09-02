@@ -115,61 +115,57 @@ class AppPhotographer {
         }
       })
     }
+    function displayMedias(media) {
+      var removeP = document.getElementById("medias_section")
+      while (removeP.lastElementChild) {
+        removeP.removeChild(removeP.lastElementChild);
+      }
+      const NewArray = []
+      media.forEach(medias => {
+        const Template = new mediaCard(medias)
+        NewArray.push(Template)
+        mediasSection.appendChild(Template.createCard())
 
+      })
+    }
     const filter = document.getElementsByClassName('filter_portfolio')
-    console.log(filter)
-
-    console.log(NewMedias)
     for (let item of filter) {
-      // Enlever le portfolio actuel
-      // var removeP = document.getElementById("medias_section")
-      // while (removeP.lastElementChild) {
-      //   removeP.removeChild(removeP.lastElementChild);
-      // }
+      item.addEventListener('change', (e) => {
+        console.log(e.target.value)
+        var selection = e.target.value;
+        switch (selection) {
+          case 'Date':
+            var media = NewMedias.sort((a, b) => {
+              return new Date(b._date) - new Date(a._date)
+            })
+            console.log(media)
+            return displayMedias(media);
+            break;
+          case 'Popularité':
+            var media = NewMedias.sort((a, b) => { return b._likes - a._likes })
+            return displayMedias(media);
+            break;
+          case 'Titre':
+            var media = NewMedias.sort((a, b) => { return b._title > a._title?1:-1 })
+            return displayMedias(media);
+            break;
+          default: return displayMedias(NewMedias)
 
-      item.addEventListener('change', () => {
-        var value = item.value;
-        console.log(value)
-        if (item.value = "Date") {
-          var removeP = document.getElementById("medias_section")
-          while (removeP.lastElementChild) {
-            removeP.removeChild(removeP.lastElementChild);
-          }
-          NewMedias.sort((a, b) => b.date - a.date)
-          console.log(NewMedias)
-          NewMedias.forEach(medias => {
-            const Template = new mediaCard(medias)
-            this._portfolio.push(Template)
-            mediasSection.appendChild(Template.createCard())
-
-          })
-        } else if (item.value = "Prix") {
-          var removeP = document.getElementById("medias_section")
-          while (removeP.lastElementChild) {
-            removeP.removeChild(removeP.lastElementChild);
-          }
-          NewMedias.sort((a, b) => b.price - a.price)
-          console.log(NewMedias)
-          NewMedias.forEach(medias => {
-            const Template = new mediaCard(medias)
-            this._portfolio.push(Template)
-            mediasSection.appendChild(Template.createCard())
-
-          })
-        } else if (item.value = "popularité") {
-          var removeP = document.getElementById("medias_section")
-          while (removeP.lastElementChild) {
-            removeP.removeChild(removeP.lastElementChild);
-          }
-          NewMedias.sort((a, b) => b.likes - a.likes)
-          console.log(NewMedias)
-          NewMedias.forEach(medias => {
-            const Template = new mediaCard(medias)
-            this._portfolio.push(Template)
-            mediasSection.appendChild(Template.createCard())
-
-          })
         }
+        // if (selection = "Date") {
+        //   var media = NewMedias.sort((a, b) => {
+        //     return new Date(b._date) - new Date(a._date)
+        //   })
+        //   console.log(media)
+        //   return displayMedias(media)
+        // } else if (selection = "Prix") {
+        //   console.log("Tri par prix" + sel)
+        //   var media = NewMedias.sort((a, b) => { return b._price - a._price })
+        //   return displayMedias(media)
+        // } else if (selection = "Popularité") {
+        //   var media = NewMedias.sort((a, b) => { return b._likes - a._likes })
+        //   return displayMedias(media)
+        // }
       })
     }
   }

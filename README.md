@@ -14,3 +14,5 @@ systeme de tri - sort
 
 
 waves dépendance chrome pour vérifier accessibilité.
+
+ajouter linter => ESLint
