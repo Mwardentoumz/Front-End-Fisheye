@@ -57,6 +57,7 @@ class AppPhotographer {
     })
 
 
+
     this._portfolio.forEach(mediaCard => {
       const img = mediaCard.$wrapperCard.querySelector('a')
 
@@ -81,15 +82,16 @@ class AppPhotographer {
       total += parseInt(item.innerHTML)
       item.addEventListener('click', e => {
         if (item.hasAttribute('id')) {
-          
+
           item.innerHTML = parseInt(item.innerHTML) - 1
           item.removeAttribute('id')
         } else {
-          
+
           item.innerHTML = parseInt(item.innerHTML) + 1
           item.setAttribute('id', 'liked')
 
-        }})
+        }
+      })
     }
     const display = document.createElement("div")
 
@@ -98,51 +100,86 @@ class AppPhotographer {
     console.log(mediasSection)
     mediasSection.appendChild(display)
     console.log(photographersData.price)
-    const likes = display.innerHTML = total + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=coeur></img>" + "<span class=likes_price>"+ photographersData.price + "€" + "</span>"
+    const likes = display.innerHTML = total + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=coeur></img>" + "<span class=likes_price>" + photographersData.price + "€" + "/jour" + "</span>"
     console.log(likes)
     display.style.display = "flex"
 
     for (let item of buttonCollection) {
       item.addEventListener('click', e => {
         if (item.hasAttribute('id')) {
-          display.innerHTML = total-- + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=coeur></img>" + "<span class=likes_price>"+ photographersData.price + "€" + "</span>"
-          
+          display.innerHTML = total-- + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=coeur></img>" + "<span class=likes_price>" + photographersData.price + "€" + "/jour" + "</span>"
+
         } else {
-          display.innerHTML = total++ + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=coeur></img>" + "<span class=likes_price>"+ photographersData.price + "€" + "</span>"
+          display.innerHTML = total++ + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=coeur></img>" + "<span class=likes_price>" + photographersData.price + "€" + "/jour" + "</span>"
 
-        }})
-      }
-  
+        }
+      })
+    }
+
+    const filter = document.getElementsByClassName('filter_portfolio')
+    console.log(filter)
+
+    console.log(NewMedias)
+    for (let item of filter) {
+      // Enlever le portfolio actuel
+      // var removeP = document.getElementById("medias_section")
+      // while (removeP.lastElementChild) {
+      //   removeP.removeChild(removeP.lastElementChild);
+      // }
+
+      item.addEventListener('change', () => {
+        var value = item.value;
+        console.log(value)
+        if (item.value = "Date") {
+          var removeP = document.getElementById("medias_section")
+          while (removeP.lastElementChild) {
+            removeP.removeChild(removeP.lastElementChild);
+          }
+          NewMedias.sort((a, b) => b.date - a.date)
+          console.log(NewMedias)
+          NewMedias.forEach(medias => {
+            const Template = new mediaCard(medias)
+            this._portfolio.push(Template)
+            mediasSection.appendChild(Template.createCard())
+
+          })
+        } else if (item.value = "Prix") {
+          var removeP = document.getElementById("medias_section")
+          while (removeP.lastElementChild) {
+            removeP.removeChild(removeP.lastElementChild);
+          }
+          NewMedias.sort((a, b) => b.price - a.price)
+          console.log(NewMedias)
+          NewMedias.forEach(medias => {
+            const Template = new mediaCard(medias)
+            this._portfolio.push(Template)
+            mediasSection.appendChild(Template.createCard())
+
+          })
+        } else if (item.value = "popularité") {
+          var removeP = document.getElementById("medias_section")
+          while (removeP.lastElementChild) {
+            removeP.removeChild(removeP.lastElementChild);
+          }
+          NewMedias.sort((a, b) => b.likes - a.likes)
+          console.log(NewMedias)
+          NewMedias.forEach(medias => {
+            const Template = new mediaCard(medias)
+            this._portfolio.push(Template)
+            mediasSection.appendChild(Template.createCard())
+
+          })
+        }
+      })
+    }
+  }
 }
-}
-    // async getAllLikes() {
-
-    //   const datas = await this.photographerApi.getMediasById(this._id)
-    //   console.log(datas)
-    //   let totalLikes = 0
-    //   datas.forEach(data => {
-    //     totalLikes = totalLikes + data.likes
-    //   })
-    //   console.log(totalLikes)
-    // }
 
 
 
-    const App2 = new AppPhotographer()
-    App2.displayPhotographer()
-// App2.getAllLikes()
 
-// document.body.addEventListener('click', (event) => {
-//   const button = event.target.closest('.likes');
-
-//   if (button.hasAttribute('id')) {
-//     button.innerHTML = parseInt(button.innerHTML) - 1
-//     button.removeAttribute('id')
-//   } else {
-//     button.innerHTML = parseInt(button.innerHTML) + 1
-//     button.setAttribute('id', 'liked')
-//   }
-// })
+const App2 = new AppPhotographer()
+App2.displayPhotographer()
 
 
 

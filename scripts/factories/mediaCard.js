@@ -3,6 +3,8 @@ class mediaCard {
         this._media = media
         this.$wrapperCard = null
         this._likes = media.likes
+        this._date = media.date
+        this._price = media.price
         
     }
 
@@ -26,7 +28,7 @@ class mediaCard {
                         <h3 class="media_title">${this._media.title}</h3>
                         <div class="likes_heart">
                             <button class="likes">${this._media.likes}</button>
-                            <img class="likes_heart_img" src="./assets/icons/heart-solid.svg" alt="coeur"></img>
+                            <img class="likes_heart_img" src="./assets/icons/heart-solid-purple.png" alt="coeur"></img>
                         </div>
                     </div>
                 </article>
@@ -52,7 +54,7 @@ class mediaCard {
                         <h3 class="media_title">${this._media.title}</h3>
                         <div class="likes_heart">
                             <button class="likes">${this._media.likes}</button>
-                            <img class="likes_heart_img" src="./assets/icons/heart-solid.svg" alt="coeur"></img>
+                            <img class="likes_heart_img" src="./assets/icons/heart-solid-purple.png" alt="coeur"></img>
                             
                         </div>
                     </div>
