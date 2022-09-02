@@ -21,12 +21,12 @@ class mediaCard {
                         
                         </div>                        
                     </a>
-                    <input type="hidden" value="${this._media.index}
+                    
                     <div class="title_likes">
                         <h3 class="media_title">${this._media.title}</h3>
                         <div class="likes_heart">
                             <button class="likes">${this._media.likes}</button>
-                            <img class="likes_heart" src="./assets/icons/heart-solid.svg" alt="coeur"></img>
+                            <img class="likes_heart_img" src="./assets/icons/heart-solid.svg" alt="coeur"></img>
                         </div>
                     </div>
                 </article>

@@ -1,5 +1,6 @@
 body{
-    min-width: 2560px;
+    margin-left: 5%;
+    margin-right: 5%;;
 }
 #contact_modal {
     display: none;
@@ -43,7 +44,8 @@ header{
     display: flex;
     flex-direction: column;
     line-height: 1.6;
-    margin-right: 150px;
+    margin-right: 79px;
+    width: 55%;
 
 }
 
@@ -56,16 +58,16 @@ header{
 
 .photographer__infos__local{
     color: #901C1C;
-    font-size:70px;
+    font-size:55px;
 }
 .photographer__infos__tagline{
     font-size: smaller;
     color: lightslategray;
-    font-size: 50px;
+    font-size: 27px;
 }
 
 .photographer__cover {
-    height: 400px;
+    height: 350px;
     width: 400px;
     border-radius: 50%;
     overflow: hidden;
@@ -79,10 +81,14 @@ header{
     object-fit: cover;
     
 }
+.media{
+    height: 500px;
+    width: 550px ;
+}
 
 .media__cover{
-    height: 600px;
-    width: 700px;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
     border-radius: 1%;
 }
@@ -90,14 +96,15 @@ header{
 .medias_section{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 100px;
-    grid-row-gap: 50px;
+    grid-column-gap: 0px;
+    grid-row-gap: 81px;
     margin-right: 5%;
     margin-left: 5%;
 }
 .medias_section article img{
-    height: 600px;
-    width: 700px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     object-fit: cover;
 }
 
@@ -118,7 +125,7 @@ header{
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 500px;
+    margin-right: 150px;
     margin-left:145px;
 }
 
@@ -146,6 +153,7 @@ header{
     margin-bottom: -6px;
     background: none;
     border:none;
+    margin-left: 10px;
 }
 
 .contact_modal{
@@ -154,15 +162,17 @@ header{
 }
 
 .modal {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    overflow-y: auto;
+    margin-top: 50px;
+    top: 5%;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 5%;
     display: none;
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -172,18 +182,34 @@ header{
 }
 
 .modal header {
-    justify-content: space-between;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+    margin-top: 0;
 }
 
 .modal header img {
     cursor: pointer;
+    position: absolute;
+    top: 3%;
+    right : 5%;
+
+
 }
 
 .modal header h2 {
+    font-size: 60px;
+    margin-bottom: -40px;
+    font-weight: 600;
+}
+
+.photographer_name{
     font-size: 64px;
     font-weight: normal;
     text-align: center;
+    color: #010202;
 }
 
 form {
@@ -211,6 +237,25 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+.send_button{
+    font-size: 29px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 250px;
+    height: 100px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 500px;
+    margin-left: 0;
+}
+
+.msg{
+    height: 220px;
 }
 
 .total_likes{

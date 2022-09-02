@@ -34,7 +34,7 @@ class photographerCard {
     const card = `      
             <article class="photographer">
               <div class="photographer__infos" tabindex="0">
-                  <h3 class="photographer__title">${this._photographer.name}</h3>        
+                  <h3 id="photographer__title" class="photographer__title">${this._photographer.name}</h3>        
                   <div class="photographer__infos__local">${this._photographer.city}, ${this._photographer.country}</div>
                   <div class="photographer__infos__tagline">${this._photographer.tagline}</div>
               </div>
