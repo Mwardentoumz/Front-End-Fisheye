@@ -125,9 +125,46 @@ class AppPhotographer {
         const Template = new mediaCard(medias)
         NewArray.push(Template)
         mediasSection.appendChild(Template.createCard())
+        
+      })
+      NewArray.forEach(mediaCard => {
+      const img = mediaCard.$wrapperCard.querySelector('a')
+
+      img.addEventListener('click', e => {
+        e.preventDefault()
+        const timer = setTimeout(() => {
+          clearTimeout(timer)
+        }, 500)
+        const lightbox = new Lightbox(mediaCard._media, mediaCard._media._photographerId, NewArray)
+        console.log(lightbox)
+        lightbox.init()
 
       })
+    })
     }
+    // function lightbox(media) {
+    //   const NewArray = []
+    //   console.log(media)
+    //   media.forEach(medias => {
+    //     const Template = new mediaCard(medias)
+    //     NewArray.push(Template)
+    //     console.log(NewArray)
+
+      
+    //     const img = mediaCard.$wrapperCard.querySelector('a')
+
+    //     img.addEventListener('click', e => {
+    //       e.preventDefault()
+    //       const timer = setTimeout(() => {
+    //         clearTimeout(timer)
+    //       }, 500)
+    //       const lightbox = new Lightbox(mediaCard._media, mediaCard._media._photographerId, this._portfolio)
+    //       console.log(lightbox)
+    //       lightbox.init()
+    //     })
+    //   })
+    // }
+
     const filter = document.getElementsByClassName('filter_portfolio')
     for (let item of filter) {
       item.addEventListener('change', (e) => {
@@ -146,10 +183,10 @@ class AppPhotographer {
             return displayMedias(media);
             break;
           case 'Titre':
-            var media = NewMedias.sort((a, b) => { return b._title > a._title?1:-1 })
+            var media = NewMedias.sort((a, b) => { return b._title > a._title ? 1 : -1 })
             return displayMedias(media);
             break;
-          default: return displayMedias(NewMedias)
+          default: return displayMedias(NewMedias);
 
         }
         // if (selection = "Date") {
