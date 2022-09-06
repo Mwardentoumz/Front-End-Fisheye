@@ -30,6 +30,7 @@ class photographerCard {
   createPhotographerHeader() {
 
     this.$wrapperCard = document.createElement('div')
+    this.$wrapperCard.classList = "photographer_container"
 
     const card = `      
             <article class="photographer">
