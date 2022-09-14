@@ -1,4 +1,7 @@
-class mediaCard {
+import {ImageFactory} from '../models/ImageFactory'
+import {VideoFactory} from '../models/VideoFactory'
+
+export class mediaCard {
     constructor(media) {
         this._media = media
         this.$wrapperCard = null
@@ -37,10 +40,11 @@ class mediaCard {
         return this.$wrapperCard
 
     
-    };
+    }
 
     createVideoCard(){
         this.$wrapperCard = document.createElement('div')
+        this.$wrapperCard.classList = "container"
         
         const card = `
                 <article class="media">
@@ -65,7 +69,7 @@ class mediaCard {
         
         this.$wrapperCard.innerHTML = card
         return this.$wrapperCard    
-    };
+    }
 
     createCard(){
         if(this._media instanceof ImageFactory){

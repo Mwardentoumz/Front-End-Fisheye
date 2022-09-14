@@ -75,3 +75,5 @@ class PhotographerApi extends Api {
 
     }
 }
+
+export {PhotographerApi}

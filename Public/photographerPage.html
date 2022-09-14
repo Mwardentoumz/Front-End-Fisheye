@@ -10,11 +10,11 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
-    <header>
+    <header aria-hidden="false">
       <a href="index.html">
         <img src="assets/images/logo.png" class="logo" alt="logo Fisheye"/>
       </a>
-    </header>
+    </header >
     <main id="main">
       <div class="photographer_header"></div>
       <div class="filter">
@@ -30,7 +30,7 @@
     </main>
     <div id="contact_modal">
 			<div class="modal">
-				<header>
+				<header arie-label="Contactez-moi">
           <h2>Contactez-moi</h2>
           <h2 class="photographer_name" aria-label="Nom du photographe"></h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" alt="close" />
@@ -51,7 +51,7 @@
 			</div>
 		</div>
           
-    <script src="/scripts/API/Api.js"></script>
+    <script src="/scripts/API/Api.js" type="module"></script>
     
     <script src="/scripts/models/photographer.js"></script>
     <script src="/scripts/factories/TemplatePhotographerCard.js"></script>
@@ -61,7 +61,7 @@
     <script src="/scripts/models/VideoFactory.js"></script>
     <script src="/scripts/models/lightboxTemplate.js"></script>
     <script src="/scripts/utils/lightbox.js"></script>    
-    <script src="/scripts/pages/photographerPage.js"></script>
+    <script src="/scripts/pages/photographerPage.js" type="module"></script>
     
     <script src="/scripts/factories/mediaFactory.js"></script> 
     

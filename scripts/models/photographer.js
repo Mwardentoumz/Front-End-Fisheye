@@ -1,4 +1,4 @@
-class photographers {
+export class photographers {
     constructor(data){
 
         this._profilPath = 'assets/photographers/'

@@ -1,3 +1,7 @@
+import {PhotographerApi} from '../API/Api.js'
+import {mediaFactory} from '../factories/mediaFactory'
+import {photographerCard} from '../factories/TemplatePhotographerCard'
+
 class AppPhotographer {
 
   constructor(media, photographer) {
@@ -39,7 +43,7 @@ class AppPhotographer {
 
     const photographersData = await this.photographerApi.getPhotographerById(photographerId);
     const mediasData = await this.photographerApi.getMediasById(photographerId)
-    const NewPhotographer = new photographers(photographersData)
+    // const NewPhotographer = new photographers(photographersData)
 
     // générer le header
 

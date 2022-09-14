@@ -1,3 +1,8 @@
+import {PhotographerApi} from '../API/Api.js'
+import {photographers} from '../models/photographer'
+import {photographerCard} from '../factories/TemplatePhotographerCard'
+
+
 class App {
     constructor() {
         this.photographerApi = new PhotographerApi('../data/photographers.json')

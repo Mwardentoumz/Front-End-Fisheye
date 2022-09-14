@@ -1,4 +1,7 @@
-class LightboxTemplate {
+import {ImageFactory} from '../models/ImageFactory'
+import {VideoFactory} from '../models/VideoFactory'
+
+export class LightboxTemplate {
     /**
      * @param {Media} media
      */

@@ -1,4 +1,4 @@
-class photographerCard {
+export class photographerCard {
   constructor(photographers) {
     this._photographer = photographers
   }
@@ -25,7 +25,7 @@ class photographerCard {
 
     this.$wrapperCard.innerHTML = card
     return this.$wrapperCard
-  };
+  }
 
   createPhotographerHeader() {
 
@@ -48,6 +48,6 @@ class photographerCard {
 
     this.$wrapperCard.innerHTML = card
     return this.$wrapperCard
-  };
+  }
 
 }

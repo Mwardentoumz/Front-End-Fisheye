@@ -1,4 +1,6 @@
-class Lightbox {
+import { LightboxTemplate } from "../models/lightboxTemplate"
+
+export class Lightbox {
   constructor (media, photographer, portfolio) {
       this._media = media
       this._photographer = photographer
