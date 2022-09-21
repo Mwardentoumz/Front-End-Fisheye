@@ -1,6 +1,8 @@
 import {PhotographerApi} from '../API/Api.js'
-import {mediaFactory} from '../factories/mediaFactory'
-import {photographerCard} from '../factories/TemplatePhotographerCard'
+import {mediaFactory} from '../factories/mediaFactory.js'
+import {photographerCard} from '../factories/TemplatePhotographerCard.js'
+import {mediaCard} from '../factories/mediaCard.js'
+import {Lightbox} from '../utils/lightbox.js'
 
 class AppPhotographer {
 
@@ -78,13 +80,13 @@ class AppPhotographer {
     })
 
     const buttonCollection = document.getElementsByClassName('likes')
-    const ArrayFromButtonCollection = Array.from(buttonCollection)
+    // const ArrayFromButtonCollection = Array.from(buttonCollection)
     let total = 0
 
     for (let item of buttonCollection) {
       parseInt(item.innerHTML)
       total += parseInt(item.innerHTML)
-      item.addEventListener('click', e => {
+      item.addEventListener('click', () => {
         if (item.hasAttribute('id')) {
 
           item.innerHTML = parseInt(item.innerHTML) - 1
@@ -109,7 +111,7 @@ class AppPhotographer {
     display.style.display = "flex"
 
     for (let item of buttonCollection) {
-      item.addEventListener('click', e => {
+      item.addEventListener('click', () => {
         if (item.hasAttribute('id')) {
           display.innerHTML = total-- + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=icone></img>" + "<span class=likes_price>" + photographersData.price + "€" + "/jour" + "</span>"
 
@@ -181,14 +183,19 @@ class AppPhotographer {
             })
             console.log(media)
             return displayMedias(media);
+            // eslint-disable-next-line no-unreachable
             break;
           case 'Popularité':
+            // eslint-disable-next-line no-redeclare
             var media = NewMedias.sort((a, b) => { return b._likes - a._likes })
             return displayMedias(media);
+            // eslint-disable-next-line no-unreachable
             break;
           case 'Titre':
+            // eslint-disable-next-line no-redeclare
             var media = NewMedias.sort((a, b) => { return b._title > a._title ? 1 : -1 })
             return displayMedias(media);
+            // eslint-disable-next-line no-unreachable
             break;
           default: return displayMedias(NewMedias);
 

@@ -1,6 +1,7 @@
 body {
     margin-left: 2%;
     margin-right: 2%;
+    font-family: "monospace", sans-serif;
     ;
 }
 
@@ -378,10 +379,10 @@ form input {
     height: 110px;
     position: fixed;
     bottom: 0%;
-    width: 22%;
-    right: 5%;
+    width: 650px;
+    right: 3%;
     color: #312e2e;
-    font-size: 2.5em;
+    font-size: 40px;
     background-color: #db8876;
     opacity: 1;
     font-weight: bold;
@@ -394,6 +395,7 @@ form input {
     width: 80px;
     margin-left: -110px;
 }
+
 
 .filter_portfolio {
     font-size: 29px;

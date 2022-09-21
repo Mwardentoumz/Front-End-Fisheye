@@ -1,5 +1,5 @@
-import {ImageFactory} from '../models/ImageFactory'
-import {VideoFactory} from '../models/VideoFactory'
+import {ImageFactory} from '../models/ImageFactory.js'
+import {VideoFactory} from '../models/VideoFactory.js'
 
 export class LightboxTemplate {
     /**
@@ -60,18 +60,18 @@ export class LightboxTemplate {
     const content = `
         
         
-        <button class="lightbox__prev round" aria-label="Media précédent"><span class="material-symbols-outlined">
+        <button class="lightbox__prev round" aria-label="Media précédent"><i class="material-symbols-outlined">
         chevron_left
-        </span></button>
+        </i></button>
         <div class="lightbox__container">
           <div class="lightbox__container__content"></div>             
         </div>
-        <button class="lightbox__next round" aria-label="Media suivant"><span class="material-symbols-outlined">
+        <button class="lightbox__next round" aria-label="Media suivant"><i class="material-symbols-outlined">
         chevron_right
-        </span></button>
-        <button class="lightbox__close" aria-label="Fermer la boite de dialog"><span class="material-symbols-outlined">
+        </i></button>
+        <button class="lightbox__close" aria-label="Fermer la boite de dialog"><i class="material-symbols-outlined">
         close
-        </span></button>
+        </i></button>
       `
 
     template.innerHTML = content

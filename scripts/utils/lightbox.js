@@ -1,4 +1,4 @@
-import { LightboxTemplate } from "../models/lightboxTemplate"
+import { LightboxTemplate } from "../models/lightboxTemplate.js"
 
 export class Lightbox {
   constructor (media, photographer, portfolio) {

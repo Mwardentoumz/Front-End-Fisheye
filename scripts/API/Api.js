@@ -14,7 +14,7 @@ class Api {
                 console.log(data.photographers)
                 console.log(data.media)
                 return data.photographers
-                return data.media
+                
 
             })
 

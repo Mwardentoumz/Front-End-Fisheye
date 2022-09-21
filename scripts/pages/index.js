@@ -1,6 +1,6 @@
 import {PhotographerApi} from '../API/Api.js'
-import {photographers} from '../models/photographer'
-import {photographerCard} from '../factories/TemplatePhotographerCard'
+import {photographers} from '../models/photographer.js'
+import {photographerCard} from '../factories/TemplatePhotographerCard.js'
 
 
 class App {

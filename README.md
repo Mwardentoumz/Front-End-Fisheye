@@ -16,3 +16,8 @@ systeme de tri - sort
 waves dépendance chrome pour vérifier accessibilité.
 
 ajouter linter => ESLint
+
+Evaluation :
+
+- ecart mkt : bouton lightbox + font
+- voir ESLINT : 

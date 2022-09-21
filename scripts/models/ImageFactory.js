@@ -1,4 +1,4 @@
-class ImageFactory {
+export class ImageFactory {
     constructor(data){
 
         this._media = data

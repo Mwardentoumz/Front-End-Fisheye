@@ -40,29 +40,58 @@
 }
 
 .lightbox__close {
-      font-size: 33px;
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 70px;
+      
       top: 50px;
       right: 50px;
       position: absolute;
+      background: none;
+      border: none;
+      color: #901C1C;
 
 }
 
 .lightbox__prev {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 70px;
       position: relative;
+      
       left: 50px;
       top: -8%;
+      background: none;
+      border: none;
+      color: #901C1C;
+      
 
 
 }
 
 .lightbox__next {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 70px;
       position: relative;
       left: -53px;
       top: -8%;
+      background: none;
+      border: none;
+      color: #901C1C;
+      ;
 
 
 }
-
+i.material-symbols-outlined{
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 70px;
+}
 
 .lightbox__loader {
       width: 38px;

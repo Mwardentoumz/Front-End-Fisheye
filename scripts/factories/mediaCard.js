@@ -1,5 +1,5 @@
-import {ImageFactory} from '../models/ImageFactory'
-import {VideoFactory} from '../models/VideoFactory'
+import {ImageFactory} from '../models/ImageFactory.js'
+import {VideoFactory} from '../models/VideoFactory.js'
 
 export class mediaCard {
     constructor(media) {
