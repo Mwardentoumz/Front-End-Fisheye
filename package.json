@@ -1,23 +1,20 @@
 {
-  "name": "front-end-fisheye",
-  "version": "1.0.0",
-  "description": "Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
+    "lint": "eslint . --ext js,jsx,ts,tsx --fix"
   },
+  "name": "front-end-fisheye",
+  "description": "Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.",
+  "version": "1.0.0",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mwardentoumz/Front-End-Fisheye.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Mwardentoumz/Front-End-Fisheye/issues"
   },
-  "homepage": "https://github.com/Mwardentoumz/Front-End-Fisheye#readme",
-  "devDependencies": {
-    "eslint": "^8.23.0"
-  }
+  "homepage": "https://github.com/Mwardentoumz/Front-End-Fisheye#readme"
 }

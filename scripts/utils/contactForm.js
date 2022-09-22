@@ -1,3 +1,5 @@
+/* eslint-disable no-redeclare */
+/* eslint-disable no-unused-vars */
 
 // DOM ELEMENTS
 const form = document.getElementById('contact_modal')
