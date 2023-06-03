@@ -41,7 +41,7 @@ export class photographerCard {
               </div>
               <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
               <div class="photographer__cover">
-                <img src="assets/photographers/${this._photographer.portrait}" alt="${this._photographer.name}" />
+                <img src="../Public/assets/photographers/${this._photographer.portrait}" alt="${this._photographer.name}" />
               </div>
             </article>      
           `

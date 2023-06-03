@@ -58,7 +58,7 @@ export class mediaCard {
                         <h3 class="media_title">${this._media.title}</h3>
                         <div class="likes_heart">
                             <button class="likes">${this._media.likes}</button>
-                            <img class="likes_heart_img" src="./assets/icons/heart-solid-purple.png" alt="coeur"></img>
+                            <img class="likes_heart_img" src="../Public/assets/icons/heart-solid-purple.png" alt="coeur"></img>
                             
                         </div>
                     </div>
