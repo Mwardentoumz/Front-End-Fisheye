@@ -140,7 +140,7 @@ header {
 }
 
 .photographer__cover {
-    max-height: 400px;
+    max-height: 450px;
     max-width: 450px;
     border-radius: 50%;
     overflow: hidden;
