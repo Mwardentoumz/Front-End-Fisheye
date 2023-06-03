@@ -106,17 +106,17 @@ class AppPhotographer {
     console.log(mediasSection)
     mediasSection.appendChild(display)
     console.log(photographersData.price)
-    const likes = display.innerHTML = total + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=icone></img>" + "<span class=likes_price>" + photographersData.price + "€" + "/jour" + "</span>"
+    const likes = display.innerHTML = total + "<img class=likes_heart src=../Public/assets/icons/heart-solid.svg alt=icone></img>" + "<span class=likes_price>" + photographersData.price + "€" + "/jour" + "</span>"
     console.log(likes)
     display.style.display = "flex"
 
     for (let item of buttonCollection) {
       item.addEventListener('click', () => {
         if (item.hasAttribute('id')) {
-          display.innerHTML = total-- + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=icone></img>" + "<span class=likes_price>" + photographersData.price + "€" + "/jour" + "</span>"
+          display.innerHTML = total-- + "<img class=likes_heart src=../../Public/assets/icons/heart-solid.svg alt=icone></img>" + "<span class=likes_price>" + photographersData.price + "€" + "/jour" + "</span>"
 
         } else {
-          display.innerHTML = total++ + "<img class=likes_heart src=./assets/icons/heart-solid.svg alt=icone></img>" + "<span class=likes_price>" + photographersData.price + "€" + "/jour" + "</span>"
+          display.innerHTML = total++ + "<img class=likes_heart src=../../Public/assets/icons/heart-solid.svg alt=icone></img>" + "<span class=likes_price>" + photographersData.price + "€" + "/jour" + "</span>"
 
         }
       })
